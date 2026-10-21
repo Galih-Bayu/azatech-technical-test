@@ -183,8 +183,6 @@ Sesuai ketentuan pada dokumen soal Halaman 6:
   - Brainstorming arsitektur dan penentuan skenario automated test integrasi.
   - Scaffolding awal struktur monorepo dan komponen UI Tailwind CSS.
   - Konsultasi struktur data seeder agar memenuhi 30 hari riwayat transaksi secara realistis.
-- **Komitmen Teknis**:
-  - Seluruh arsitektur, algoritma kalkulasi transaksi atomik, query Eloquent, serta struktur komponen dipahami secara menyeluruh oleh kandidat dan siap dijelaskan maupun dimodifikasi langsung pada sesi wawancara dan code review.
 
 ---
 
