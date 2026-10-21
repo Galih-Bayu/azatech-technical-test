@@ -32,7 +32,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col md:flex-row text-slate-900">
       {/* Mobile Top Header */}
-      <header className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200 sticky top-0 z-30">
+      <header className="md:hidden flex items-center justify-between px-4 py-3 bg-white border-b border-slate-200 sticky top-0 z-30 print:hidden">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold">
             <Store className="w-5 h-5" />
@@ -50,14 +50,14 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Mobile Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          className="fixed inset-0 bg-black/40 z-40 md:hidden print:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
 
       {/* Sidebar Navigation */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col transform transition-transform duration-200 ease-in-out md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 flex flex-col transform transition-transform duration-200 ease-in-out md:static md:translate-x-0 print:hidden ${
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -125,8 +125,8 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Main Content Viewport */}
-      <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
-        <div className="p-4 sm:p-6 md:p-8 max-w-7xl w-full mx-auto">{children}</div>
+      <main className="flex-1 flex flex-col min-w-0 overflow-y-auto print:overflow-visible print:p-0">
+        <div className="p-4 sm:p-6 md:p-8 max-w-7xl w-full mx-auto print:max-w-none print:p-0 print:m-0">{children}</div>
       </main>
     </div>
   );
